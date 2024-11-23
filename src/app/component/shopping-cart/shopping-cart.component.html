@@ -1,0 +1,52 @@
+<section class="mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="h3 text-danger">Shopping Cart</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, id blanditiis? Animi iste quasi consectetur maxime, odit pariatur dolorem minima labore, inventore modi dignissimos voluptatum optio? Iste odio obcaecati dolor?</p>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-hover text-center table-stripped">
+                    <thead class="bg-secondary text-white">
+                        <tr>
+                            <th>Sno</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of products">
+                            <td>{{product.sno}}</td>
+                            <td>
+                                <img [src]="product.image" alt="" width="50" height="50">
+                            </td>
+                            <td>{{product.name}}</td>
+                            <td>{{product.price | currency:'INR'}}</td>
+                            <td>
+                                <i (click)="decrement(product.sno)" class="fa fa-minus-circle"></i>
+                                {{product.quantity}}
+                                <i (click)="increment(product.sno)" class="fa fa-plus-circle"></i>
+                            </td>
+                            <td>{{product.quantity * product.price | currency:'INR'}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td>Grand Total</td>
+                            <td>{{calculateGrandTotal() | currency:'INR'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </section>
+    

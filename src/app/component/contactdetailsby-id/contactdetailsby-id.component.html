@@ -1,0 +1,40 @@
+<div class="container mt-3" *ngIf="isNotEmpty()">
+    <div class="row">
+        <div class="col">
+            <p class="h3 text-danger">{{contactData.name.first}} {{contactData.name.last}}'s Details</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi adipisci aliquid ipsum mollitia, aut officia maxime quia veniam! Velit eaque, quisquam magni nostrum iure harum eveniet quam numquam accusantium provident.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="isNotEmpty()">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img [src]="contactData.picture.large" alt="">
+                        </div>
+                        <div class="col-md-9">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    Name: {{contactData.name.first}} {{contactData.name.last}}
+                                </li>
+                                <li class="list-group-item">
+                                    Age: {{contactData.dob.age}}
+                                </li>
+                                <li class="list-group-item">
+                                    Email: {{contactData.email}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a routerLink="/contacts" class="btn btn-danger btn-sm">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

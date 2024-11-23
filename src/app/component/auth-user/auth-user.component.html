@@ -1,0 +1,16 @@
+<section class="mt-3">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h2 *ngIf="isLoggedIn">Welcome Hari Prasad!</h2>
+                    <h2 *ngIf="!isLoggedIn">Thank You!</h2>
+                    <button *ngIf="!isLoggedIn" (click)="login()" class="btn btn-success brn-sm">Login</button>
+                    <button *ngIf="isLoggedIn" (click)="logOut()" class="btn btn-warning brn-sm">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
